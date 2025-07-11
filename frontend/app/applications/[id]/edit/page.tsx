@@ -25,7 +25,7 @@ export default function EditApplicationPage() {
         const data = await res.json();
         setApplication(data);
       } catch (error) {
-        toast.error("Failed to load application data.");
+        toast("Failed to load application data.");
         console.log(error);
         setApplication(null);
       } finally {
@@ -48,10 +48,10 @@ export default function EditApplicationPage() {
 
       if (!res.ok) throw new Error("Update failed");
 
-      toast.success("Application updated!");
+      toast("Application updated!");
       router.push("/applications");
     } catch (error) {
-      toast.error("Failed to update application.");
+      toast("Failed to update application.");
       console.log(error);
     }
   };

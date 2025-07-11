@@ -23,7 +23,7 @@ export default function ApplicationDetailPage() {
         const data = await res.json();
         setApplication(data);
       } catch (error) {
-        toast.error("Failed to fetch application detail.");
+        toast("Failed to fetch application detail.");
         setApplication(null);
         console.log(error);
       } finally {

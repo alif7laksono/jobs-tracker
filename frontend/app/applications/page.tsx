@@ -34,7 +34,7 @@ export default function ApplicationsPage() {
         const data = await fetchApplications();
         setApplications(data);
       } catch (error) {
-        toast.error(
+        toast(
           `Failed to fetch job applications: ${
             error instanceof Error ? error.message : "Unknown error"
           }`
@@ -60,9 +60,9 @@ export default function ApplicationsPage() {
     try {
       await deleteApplication(id);
       setApplications((prev) => prev.filter((app) => app._id !== id));
-      toast.success("Application deleted!");
+      toast("Application deleted!");
     } catch (error) {
-      toast.error("Failed to delete application.");
+      toast("Failed to delete application.");
       console.log(error);
     }
   };

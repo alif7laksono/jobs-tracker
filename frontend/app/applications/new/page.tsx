@@ -22,10 +22,10 @@ export default function NewApplicationPage() {
 
       if (!res.ok) throw new Error("Failed to create application");
 
-      toast.success("Application added successfully!");
+      toast("Application added successfully!");
       router.push("/applications");
     } catch (error) {
-      toast.error("Failed to add application.");
+      toast("Failed to add application.");
       console.error(error);
     }
   };
